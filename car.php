@@ -50,7 +50,13 @@ $cars_matching_search = array();
 foreach ($cars as $car) {
     if ($car->price < $_GET["price"] && $car->miles < $_GET["mileage"]) {
         array_push($cars_matching_search, $car);
-    }
+}
+}
+ if (empty($cars_matching_search)) {
+   echo "Sorry there are no cars that match your search";
+ }
+ else {
+   echo "there are cars matching your search";
 }
 ?>
 
